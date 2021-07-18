@@ -1,0 +1,56 @@
+.header{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+
+    &__logo{
+        height: 26px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        justify-content: center;
+    }
+    &__search{
+        height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        background-color: #fafafa;
+        border: 1px solid #E1E1E1;
+        padding-left: 40px;
+        background-image: url(../../assets/images/Icons/Icon-search.svg);
+        background-repeat: no-repeat;
+        background-position: left;
+        background-position-x: 15px;
+        &::placeholder{
+            color: #323232;
+        }
+    }
+    &__button{
+        height: 48px;
+        width: calc(100% - (48px + 16px));
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #0095FF;
+        border: none;
+        margin-top: 8px;
+        margin-bottom: 16px;
+        background-image: url(../../assets/images/Icons/Icon-upload.svg);
+        background-repeat: no-repeat;
+        background-position-y: center;
+        background-position-x: 40%;
+        padding-left: 10%;
+        font-size: 12px;
+    }
+    &__mohan{
+        border-radius: 50%;
+        background-image: url(../../assets/images/Images/Mohan-muruge.jpg);
+        height: 48px;
+        width: 48px;
+        background-size: cover;
+        margin-left: 16px;
+        margin-bottom: 16px;
+        margin-top: 8px;
+    }
+}
