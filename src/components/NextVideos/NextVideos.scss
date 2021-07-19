@@ -1,8 +1,13 @@
+@use '../../partials/partials' as *;
 .next-video{
     &__container{
         display: flex;
         margin-left: 16px;
         margin-right: 16px;
+        @include tablet{
+            margin-left: 24px;
+            margin-right: 24px;
+        }
     }
     &__image{
         width: 120px;
@@ -14,6 +19,9 @@
     }
     &__text{
         width: calc(100% - (16px + 120px));
+        @include tablet{
+            width: 220px
+        }
     }
     &__title{
         margin-bottom: 8px;

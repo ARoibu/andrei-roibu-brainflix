@@ -22,8 +22,10 @@ const Comment = ({ name, timestamp, comment }) => {
         <div className='comments'>
             <div className='comments__avatar'></div>
             <div className='comments__data'>
-                <h3>{name}</h3>
-                <p className='comments__date'>{timestamp}</p>
+                {/* <div className='comments__top'> */}
+                    <h3>{name}</h3>
+                    <p className='comments__date'>{new Date(timestamp).toLocaleDateString()}</p>
+                {/* </div> */}
                 <p className='comments__text'>{comment}</p>
             </div>
         </div>

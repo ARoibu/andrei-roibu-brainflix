@@ -1,3 +1,5 @@
+@use '../../partials/partials' as *;
+
 .header{
     display: flex;
     flex-wrap: wrap;
@@ -5,12 +7,25 @@
     align-items: center;
     margin-left: 16px;
     margin-right: 16px;
+    @include tablet{
+        justify-content: space-between;
+        margin-top: 16px;
+        margin-bottom: 16px;
+    }
+    @include desktop{
+        margin-left: 100px;
+        margin-right: 100px;
+    }
 
     &__logo{
         height: 26px;
         margin-top: 10px;
         margin-bottom: 10px;
         justify-content: center;
+        @include tablet{
+            justify-content: space-between;
+            margin-right: 169px;
+        }
     }
     &__search{
         height: 48px;
@@ -25,6 +40,9 @@
         background-position-x: 15px;
         &::placeholder{
             color: #323232;
+        }
+        @include tablet{
+            width: calc(100% - (169px + 24px + 24px + 400px));
         }
     }
     &__button{
@@ -45,6 +63,12 @@
         &:hover{
             background-color: #0065AD;
         }
+        @include tablet{
+            width: 120px;
+            padding-left: 2%;
+            background-position-x: 20%;
+            margin-top: 16px;
+        }
     }
     &__mohan{
         border-radius: 50%;
@@ -55,5 +79,9 @@
         margin-left: 16px;
         margin-bottom: 16px;
         margin-top: 8px;
+        @include tablet{
+            margin-left: 0;
+            margin-top: 16px;
+        }
     }
 }

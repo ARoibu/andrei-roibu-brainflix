@@ -1,3 +1,5 @@
+@use '../../partials/partials' as *;
+
 .comment-form{
     margin-left: 16px;
     margin-right: 16px;
@@ -7,6 +9,10 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
+    @include tablet{
+        margin-left: 24px;
+        margin-right: 24px;
+    }
 
     &__container{
         width: 100%;
@@ -32,7 +38,7 @@
     &__field{
         width: 100%;
         margin-bottom: 16px;
-        min-height: 16px;
+        height: 16px;
         background-color: #FAFAFA;
         border-radius: 4px;
         border: 1px solid #AFAFAF;
@@ -41,6 +47,9 @@
         resize: none;
         &:focus{
             border: 2px solid #0095FF;
+        }
+        @include tablet{
+            width: calc(100% - (160px + 16px + 80px))
         }
     }
     &__button{
@@ -54,6 +63,11 @@
 
         &:hover{
             background-color: #0065AD;
+        }
+        @include tablet{
+            width: 160px;
+            margin-right: 40px;
+            margin-left: 16px;
         }
     }
     &__counter{
