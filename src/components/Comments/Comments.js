@@ -1,3 +1,5 @@
+import "./Comments.scss";
+
 export default function Comments({comments}) {
     return (
         <div>
@@ -17,12 +19,12 @@ export default function Comments({comments}) {
 
 const Comment = ({ name, timestamp, comment }) => {
     return (
-        <div>
-            <div></div>
-            <div>
+        <div className='comments'>
+            <div className='comments__avatar'></div>
+            <div className='comments__data'>
                 <h3>{name}</h3>
-                <p>{timestamp}</p>
-                <p>{comment}</p>
+                <p className='comments__date'>{timestamp}</p>
+                <p className='comments__text'>{comment}</p>
             </div>
         </div>
     );

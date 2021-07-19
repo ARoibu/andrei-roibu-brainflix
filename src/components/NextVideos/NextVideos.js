@@ -26,8 +26,8 @@ const Video = ({ image, title, channel, clickHandler, id }) => {
     return (
         <div className="next-video__container" onClick={() => clickHandler(id)}>
             <img className='next-video__image' src={image}/>
-            <div>
-                <p>{title}</p>
+            <div className='next-video__text'>
+                <h3 className='next-video__title'>{title}</h3>
                 <p>{channel}</p>
             </div>
         </div>

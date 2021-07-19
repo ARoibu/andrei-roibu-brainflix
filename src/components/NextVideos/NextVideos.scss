@@ -1,6 +1,8 @@
 .next-video{
     &__container{
         display: flex;
+        margin-left: 16px;
+        margin-right: 16px;
     }
     &__image{
         width: 120px;
@@ -9,6 +11,12 @@
         margin-bottom: 24px;
         border-radius: 4px;
         object-fit: cover;
+    }
+    &__text{
+        width: calc(100% - (16px + 120px));
+    }
+    &__title{
+        margin-bottom: 8px;
     }
 
 }

@@ -42,6 +42,9 @@
         background-position-x: 40%;
         padding-left: 10%;
         font-size: 12px;
+        &:hover{
+            background-color: #0065AD;
+        }
     }
     &__mohan{
         border-radius: 50%;
