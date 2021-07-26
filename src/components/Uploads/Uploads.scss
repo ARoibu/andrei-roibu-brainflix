@@ -1,0 +1,122 @@
+@use '../../partials/partials' as *;
+
+.upload{
+    margin: 0 16px;
+    @include tablet{
+        margin: 0 24px;
+    }
+    @include desktop{
+        margin: 0 100px;
+    }
+
+    &__heading{
+        font-family: AvenirBold;
+        margin-top: 24px;
+        padding-bottom: 32px;
+        @include tablet{
+            border-bottom: 2px solid #AFAFAF;
+            margin-bottom: 40px;
+        }
+    }
+    &__label{
+        color: #AFAFAF;
+        font-size: 12px;
+        font-family: AvenirDemi;
+    }
+    &__thumbnail{
+        border-radius: 4px;
+        width: 100%;
+        margin-bottom: 32px;
+        @include tablet{
+            width: 344px;
+        }
+    }
+    &__title{
+        width: calc(100% - (16px + 16px));
+        margin-bottom: 24px;
+        height: 16px;
+        background-color: #FAFAFA;
+        border-radius: 4px;
+        border: 1px solid #AFAFAF;
+        outline: none;
+        padding: 16px;
+        resize: none;
+        &:focus{
+            border: 2px solid #0095FF;
+        }
+        &::placeholder{
+            color: #323232;
+        }
+    }
+    &__description{
+        width: calc(100% - (16px + 16px));
+        margin-bottom: 32px;
+        height: 143px;
+        background-color: #FAFAFA;
+        border-radius: 4px;
+        border: 1px solid #AFAFAF;
+        outline: none;
+        padding: 16px;
+        resize: none;
+        &:focus{
+            border: 2px solid #0095FF;
+        }
+        &::placeholder{
+            color: #323232;
+            font-family: Avenir;
+        }
+        @include desktop{
+            height: 60px;
+        }
+      
+    }
+    &__publish{
+        font-size: 16px;
+        height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        color: #FFFFFF;
+        background-color: #0095FF;
+        border: none;
+        margin-bottom: 24px;
+
+        &:hover{
+            background-color: #0065AD;
+        }
+        @include tablet{
+            width: 160px;
+        }
+    }
+    &__cancel{
+        font-size: 16px;
+        height: 48px;
+        width: 100%;
+        border-radius: 4px;
+        color: #0095FF;
+        background-color: #FFFFFF;
+        border: none;
+        margin-bottom: 24px;
+        @include tablet{
+            width: 160px;
+        }
+    }
+    &__buttons{
+        @include tablet{
+            display: flex;
+            flex-direction: row-reverse;
+            border-top: 2px solid #AFAFAF;
+            padding-top: 40px;
+        }
+    }
+    &__main{
+        @include desktop{
+            display: flex;
+        }
+    }
+    &__fields{
+        @include desktop{
+            width: 100%;
+            margin-left: 24px;
+        }
+    }
+}

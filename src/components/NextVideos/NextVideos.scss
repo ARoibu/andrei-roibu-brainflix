@@ -19,12 +19,18 @@
     }
     &__text{
         width: calc(100% - (16px + 120px));
+        text-decoration: none;
         @include tablet{
             width: 220px
         }
     }
     &__title{
         margin-bottom: 8px;
+        text-decoration: none;
+    }
+    &__link{
+        text-decoration: none;
+        color: #323232;
     }
 
 }

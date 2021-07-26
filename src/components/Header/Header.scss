@@ -46,8 +46,9 @@
         }
     }
     &__button{
-        height: 48px;
-        width: calc(100% - (48px + 16px));
+        padding: 18px 0;
+        text-decoration: none;     
+        width: calc(65% - (48px + 16px + 40px));
         border-radius: 4px;
         color: #FFFFFF;
         background-color: #0095FF;
@@ -58,16 +59,19 @@
         background-repeat: no-repeat;
         background-position-y: center;
         background-position-x: 40%;
-        padding-left: 10%;
+        padding-left: 40%;
         font-size: 12px;
         &:hover{
             background-color: #0065AD;
         }
         @include tablet{
             width: 120px;
-            padding-left: 2%;
+            padding-left: 60px;
             background-position-x: 20%;
             margin-top: 16px;
+        }
+        &--text{
+            text-decoration: none;
         }
     }
     &__mohan{

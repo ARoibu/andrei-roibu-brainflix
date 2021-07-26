@@ -1,0 +1,11 @@
+@use '../../partials/partials' as *;
+
+.layout{
+    @include desktop{
+        display: flex; 
+        flex-wrap: wrap;
+    }
+    &__videos{
+        width: 20%;
+    }
+}
