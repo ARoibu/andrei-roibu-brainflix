@@ -4,13 +4,12 @@ const PORT = 8080;
 const routes = require('./routes/routes')
 const cors = require("cors");
 
-app.use(express.static("public"));
+app.use(cors());
+app.use(express.json());
+app.use(express.static("public/images"));
 
-app.get('/', (req, res) => {
-    res.send('Express is running!');
-});
 
-app.use("/", routes);
+app.use("/videos", routes);
 
 app.listen(PORT, () => {
     console.log(`Server Started on http://localhost:${PORT}`);

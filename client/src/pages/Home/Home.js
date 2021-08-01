@@ -1,5 +1,5 @@
 import React from "react";
-import {API_URL, API_KEY} from '../../util'
+import {API_URL} from '../../util'
 import axios from "axios";
 import './home.scss'
 import CurrentVideo from "../../components/CurrentVideo/CurrentVideo";
@@ -13,11 +13,11 @@ class Home extends React.Component {
     };
 
     componentDidMount() {
-        axios.get(`${API_URL}/videos${API_KEY}`)
+        axios.get(`${API_URL}/videos`)
         .then((response)=>{
             this.setState({nextVideos: response.data})
             console.log(response.data);
-            return axios.get(`${API_URL}/videos/1af0jruup5gu${API_KEY}`);
+            return axios.get(`${API_URL}/videos/1af0jruup5gu`);
         })
         .then((response)=>{
             this.setState({currentVideo: response.data})
@@ -30,7 +30,7 @@ class Home extends React.Component {
     }
     componentDidUpdate(prevProps) {
         if (prevProps.match.params.id !== this.props.match.params.id) {
-            axios.get(`${API_URL}/videos/${this.props.match.params.id}${API_KEY}`)
+            axios.get(`${API_URL}/videos/${this.props.match.params.id}`)
             .then((response)=>{
                 this.setState({currentVideo: response.data});
                 console.log(response.data);
