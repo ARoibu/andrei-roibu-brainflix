@@ -1,17 +1,33 @@
 import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg"
 import './Uploads.scss'
+import axios from "axios";
 
 export default function Uploads() {
-    function publish(e) {
-        e.preventDefault();
+    function publish(event) {
+        event.preventDefault();
+        const newVideo = {
+            title: event.target.title.value,
+            description: event.target.description.value,
+        };
+        createVideo(newVideo);
         alert('Upload');
         window.location = '/';
-    }
+    };
+
+    const createVideo = (obj) => {
+        axios.post("/videos", obj)
+          .then((response) => {
+            this.setState({ videos: response.data });
+          })
+          .catch((error) => {
+            console.log(error);
+          });
+      };
 
     return(
         <div className='upload'>
             <h1 className='upload__heading'>Upload Video</h1>
-            <form className='upload__form'>
+            <form onSubmit={publish} className='upload__form'>
                 <div className='upload__main'>
                     <div>
                         <p className='upload__label'>VIDEO THUMBNAIL</p>
@@ -25,7 +41,7 @@ export default function Uploads() {
                     </div>
                 </div>
                 <div className='upload__buttons'>
-                    <input onClick={publish} className='upload__publish' type="submit" value='PUBLISH'/><br/>
+                    <input className='upload__publish' type="submit" value='PUBLISH'/><br/>
                     <input className='upload__cancel' type="submit" value='CANCEL'/>
                 </div>
             </form>
