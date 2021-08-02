@@ -15,17 +15,26 @@ class Home extends React.Component {
     componentDidMount() {
         axios.get(`${API_URL}/videos`)
         .then((response)=>{
-            this.setState({nextVideos: response.data})
-            console.log(response.data);
-            return axios.get(`${API_URL}/videos/1af0jruup5gu`);
-        })
-        .then((response)=>{
-            this.setState({currentVideo: response.data})
-            console.log(response.data);
+            this.setState({
+                nextVideos: response.data,
+                currentVideo: response.data[0]
+            });
         })
         .catch((error)=>{
             console.log(error);
         });
+
+    if (`/{this.props.match.params.id}` !== this.props.match.params.id) {
+        axios.get(`/videos/${this.props.match.params.id}`)
+        .then((response) => {
+            this.setState({
+                currentVideo: response.data
+            });
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    }
        
     }
     componentDidUpdate(prevProps) {
@@ -33,9 +42,21 @@ class Home extends React.Component {
             axios.get(`${API_URL}/videos/${this.props.match.params.id}`)
             .then((response)=>{
                 this.setState({currentVideo: response.data});
-                console.log(response.data);
+                window.scrollTo(0, 0);
             })
             .catch((error)=>{
+                console.log(error);
+            });
+        }
+
+        if (this.props.location.pathname === '/') {
+            axios.get(`/videos`)
+            .then((response) => {
+                this.setState({
+                    currentVideo: response.data[0]
+                });
+            })
+            .catch((error) => {
                 console.log(error);
             });
         }

@@ -23,7 +23,7 @@ function CurrentVideo({currentVideo}) {
                         <p>{currentVideo.likes}</p>
                     </div>
                     <p className='video__description'>{currentVideo.description}</p>
-                    <CommentForm />              
+                    <CommentForm currentVideo={currentVideo}/>              
                     <Comments comments={currentVideo.comments}/>
                 </div>
             </>

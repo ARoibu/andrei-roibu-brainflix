@@ -1,9 +1,11 @@
 import './CommentForm.scss'
 
-export default function CommentForm() {
+
+export default function CommentForm(props) {
+
     return(
         <div className='comment-form'>
-            <h3 className='comment-form__counter'>3 Comments</h3>
+            <h3 className='comment-form__counter'>{props.currentVideo.comments.length} Comments</h3>
             <div className="comment-form__container">
             <div className="comment-form__avatar"></div>
                 <div className='comment-form__form-area'>

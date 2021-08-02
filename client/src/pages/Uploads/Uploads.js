@@ -1,8 +1,11 @@
 import thumbnail from "../../assets/images/Images/Upload-video-preview.jpg"
 import './Uploads.scss'
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 export default function Uploads() {
+    let history = useHistory();
+    
     function publish(event) {
         event.preventDefault();
         const newVideo = {
@@ -11,7 +14,8 @@ export default function Uploads() {
         };
         createVideo(newVideo);
         alert('Upload');
-        window.location = '/';
+        
+        history.push('/');
     };
 
     const createVideo = (obj) => {
